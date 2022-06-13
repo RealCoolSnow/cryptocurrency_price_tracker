@@ -7,10 +7,10 @@ let selectedCoins = [];
 let run = true;
 
 chrome.runtime.onInstalled.addListener(function(e){
-  if(e.reason === 'install') chrome.tabs.create({ url: "../html/welcome.html" });
+  // if(e.reason === 'install') chrome.tabs.create({ url: "../html/welcome.html" });
   if(e.reason === 'update') {
     core();
-    chrome.tabs.create({url: "../html/update.html"});
+    // chrome.tabs.create({url: "../html/update.html"});
   };
 });
 
