@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/customisation.css">
+    <title>Customistation</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Change colors for a popup window</h1>
+        <div id="settings">
+            <div id="market-cap-colors">
+                <div id="market-cap-colors-background">
+                    <span>Change background color of market cap element:</span>
+                    <input type="color" value="#3191ff" data-element=".market-cap" data-property="background-color">
+                </div>
+                <div id="market-cap-colors-font">
+                    <span>Change font color of market cap element:</span>
+                    <input type="color" value="#ffffff" data-element=".market-cap-span" data-property="color">
+                </div>
+            </div>
+            <!-- --- -->
+            <div id="header-colors">
+                <div id="header-colors-background">
+                    <span>Change background color of header element:</span>
+                    <input type="color" value="#fdfdfd" data-element=".header" data-property="background-color">
+                </div>
+                <div id="header-colors-font">
+                    <span>Change font color of header element:</span>
+                    <input type="color" value="#000000" data-element=".header" data-property="color">
+                </div>
+                <div id="header-colors-border">
+                    <span>Change border color of header element:</span>
+                    <input type="color" value="#ececec" data-element=".header" data-property="border-color">
+                </div>
+            </div>
+            <!-- --- -->
+            <div id="coin-colors">
+                <div id="coin-colors-background">
+                    <span>Change background color of coin element:</span>
+                    <input type="color" value="#ffffff" data-element=".coin" data-property="background-color">
+                </div>
+                <div id="coin-colors-name">
+                    <span>Change font color of coin name:</span>
+                    <input type="color" value="#000000" data-element=".coin-name" data-property="color">
+                </div>
+                <div id="coin-colors-btc">
+                    <span>Change font color of BTC price:</span>
+                    <input type="color" value="#5d5d5d" data-element=".coin-btc-price" data-property="color">
+                </div>
+                <div id="coin-colors-fiat">
+                    <span>Change font color of fiat price:</span>
+                    <input type="color" data-element=".coin-price" data-property="color">
+                </div>
+                <div id="market-cap-colors-up-font">
+                    <span>Change font color of positive price change:</span>
+                    <input type="color" value="#0E9E0E" data-element=".up" data-property="color">
+                </div>
+                <div id="market-cap-colors-up-arrow">
+                    <span>Change arrow color of positive price change:</span>
+                    <input type="color" value="#0E9E0E" data-element=".up" data-property="border-bottom-color">
+                </div>
+                <div id="market-cap-colors-down-font">
+                    <span>Change font color of negative price change:</span>
+                    <input type="color" value="#FD2F2F" data-element=".down" data-property="color">
+                </div>
+                <div id="market-cap-colors-down-arrow">
+                    <span>Change arrow color of positive price change:</span>
+                    <input type="color" value="#FD2F2F" data-element=".down" data-property="border-top-color">
+                </div>
+                <div id="coin-colors-border">
+                    <span>Change border color of coin element::</span>
+                    <input type="color" value="#e8e8e8" data-element=".coin" data-property="border-color">
+                </div>
+            </div>
+            <!-- --- -->
+            <div id="countdown-colors">
+                <div id="countdown-colors-background">
+                    <span>Change background of countdown element:</span>
+                    <input type="color" value="#ffffff" data-element=".countdown" data-property="background-color">
+                </div>
+                <div id="countdown-colors-font">
+                    <span>Change font color of countdown element:</span>
+                    <input type="color" value="#000000" data-element=".last-update" data-property="color">
+                </div>
+            </div>
+            <!-- --- -->
+        </div>
+        <div id="demo">
+            <div class="market-cap"><span class="market-cap-span">Total Market Cap: $ 000,000,000,000.000</span></div>
+            <ul class="header">
+                <li class="first-col">NAME, SYMBOL AND BTC PRICE</li>
+                <li class="second-col fiat">USD PRICE</li>
+                <li class="third-col">24h</li>
+            </ul>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change down">-X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change up">X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change down">-X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change up">X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change down">-X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change up">X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change up">X.xx%</span>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="first-col">
+                    <span class="coin-name">XXXX YYY</span>
+                    <span class="coin-btc-price" style="margin-top: 0.15rem;">฿ X.xxxxxxxx</span>
+                </div>
+                <div class="second-col">
+                    <span class="coin-price">$ XXXX.xxxx</span>
+                </div>
+                <div class="third-col">
+                    <span class="change up">X.xx%</span>
+                </div>
+            </div>
+            <span class="countdown"><span class="last-update">2 minutes ago</span></span>
+        </div>
+        <div id="buttons-wrapper">
+            <button id="save">Save changes</button>
+            <button id="reset">Reset to default</button>
+        </div>
+    </div>
+
+    <script src="../js/customisation.js"></script>
+</body>
+</html>

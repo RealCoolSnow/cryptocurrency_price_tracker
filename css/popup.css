@@ -1,0 +1,342 @@
+::-webkit-scrollbar-track{
+    background-color: ghostwhite;
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: rgb(212, 212, 212);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+:root {
+    font-size: 16px;
+}
+
+.spinner {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    font-family: sans-serif;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+#spinner-text {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.spinner-inner {
+    position: relative;
+    box-sizing: border-box;
+    width: 60%;
+    height: 5px;
+    overflow: hidden;
+    border: 1px solid #f2f2f2;
+}
+
+.spinner-inner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4777b3;
+    background-position: 0 ;
+    transform: translateX(-100%);
+    transform-origin: left;
+    animation: loading 2s ease-in-out infinite forwards;
+}
+
+@keyframes loading {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(200%);
+    }
+}
+
+.header {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 7px;
+    width: 100%;
+    list-style-type: none;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: ghostwhite;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 390px;
+    min-height: 50px;
+    font-family: sans-serif;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.container.wide {
+    width: 450px;
+}
+
+.market-cap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    background-color: #3179E5;
+}
+
+.market-cap-span {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.coin {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 15px;
+    width: 100%;
+    min-height: 35px;
+    font-size: 14px;
+    border-bottom: 1px solid #ececec;
+    background-color: white;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+}
+
+.coin:last-child {
+    border-bottom: 0;
+}
+
+.coin::before {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.05;
+}
+
+.coin:hover::before {
+    display: block;
+}
+
+.first-col,
+.second-col,
+.third-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 2;
+    margin-right: 2px;
+    pointer-events: none;
+}
+
+.first-col {
+    flex: 3;
+}
+
+.second-col {
+    align-items: flex-end;
+}
+
+.second-col.two span{
+    font-size: 13px;
+    color: #a0a0a0;
+}
+
+.second-col.two .selected {
+    font-size: 13px;
+    color: black;
+}
+
+.third-col {
+    display: block;
+    flex: 1;
+    margin-right: 0;
+    text-align: center;
+}
+
+.coin-name {
+    position: relative;
+    /* margin-bottom: 0.15rem; */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+    pointer-events: auto;
+}
+
+.coin-name img {
+    width: 10px;
+    margin-left: 5px;
+    vertical-align: baseline;
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.coin-name:hover img {
+    transform: scale(1);
+}
+
+.coin-name.link:hover {
+    text-decoration: underline;
+}
+
+.coin-btc-price {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #5d5d5d;
+}
+
+.change {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.change.up {
+    position: relative;
+    color: rgb(14, 158, 14);
+    border-bottom-color: rgb(14, 158, 14);
+}
+
+.change.down {
+    position: relative;
+    color: rgb(253, 47, 47);
+    border-bottom-color: rgb(253, 47, 47);
+}
+
+.change.up::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -12.5px;
+    border: 5px solid transparent;
+    border-bottom-color: inherit;
+    transform: translate3d(0, -4px, 0);
+    animation: up 2s infinite;
+}
+
+.change.down::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -12.5px;
+    border: 5px solid transparent;
+    border-top-color: inherit;
+    transform: translate3d(0, -4px, 0);
+    animation: down 2s infinite;
+}
+
+@keyframes up {
+    0% {
+        transform: translate3d(0, -4px, 0);
+        opacity: 1;
+    } 100% {
+        transform: translate3d(0, -12px, 0);
+        opacity: 0;
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: translate3d(0, -4px, 0);
+        opacity: 1;
+    } 100% {
+        transform: translate3d(0, 4px, 0);
+        opacity: 0;
+    }
+}
+
+.updated {
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: bold;
+}
+.coin-price {
+    position: relative;
+    font-size: 14px;
+    transform-origin: right;
+}
+
+.countdown {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.last-update{
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+}
+
+.last-update.blur {
+	filter: blur(3px);
+}
+
+.countdown-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4777b3;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.error {
+    position: relative;
+    padding: 7px;
+    text-align: center;
+    font-size: 13px;
+    color: red;
+}

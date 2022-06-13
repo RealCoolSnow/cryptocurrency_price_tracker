@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Options</title>
+        <link rel="stylesheet" href="../css/options.css">
+    </head>
+    <body>
+
+        <div class="container loading">
+
+            <h1>Options</h1>
+
+            <div class="options">
+                
+                <div class="link-option-wrapper">
+                    <p>
+                        When I click on a coin name in a popup window, take me to the page for that coin on CoinGecko.com website:
+                    </p>
+                    <div class="radio-wrapper">
+                        <input id="yes" type="radio" name="link">
+                        <label for="yes">YES</label>
+                        <input id="no" type="radio" name="link" checked>
+                        <label for="no">NO</label>
+                    </div>
+                </div>
+                
+                <div class="fiat-wrapper">
+                    <p>Select fiat currency in which coin prices and total market cap will be displayed:</p>
+                    <span class="fiat">AUD</span>
+                    <span class="fiat">CAD</span>
+                    <span class="fiat">CHF</span>
+                    <span class="fiat">CNY</span>
+                    <span class="fiat">EUR</span>
+                    <span class="fiat">GBP</span>
+                    <span class="fiat">INR</span>
+                    <span class="fiat">RUB</span>
+                    <span class="fiat">IDR</span>
+                    <span class="fiat">PLN</span>
+                    <span class="fiat">NZD</span>
+                    <span class="fiat">KRW</span>
+                    <span class="fiat">MYR</span>
+                    <span class="fiat">TRY</span>
+                </div>
+                
+                <div class="search-wrapper">
+                    <p>Search coins:</p>
+                    <input type="text" placeholder="Enter coin name or symbol">
+                </div>
+
+                <div class="coins-filter">
+                    <button id="all" class="active">All Coins</button>
+                    <button id="selected">Selected Coins</button>
+                    <button id="with-alert">Coins With Alert</button>
+                </div>
+                
+                <div class="coins-wrapper"></div>
+                
+                <div class="alert-form">
+                    <h3></h3>
+                    <div class="currency-selection">
+                        <span>Select currency:</span>
+                        <select>
+                            <option value="usd">USD</option>
+                            <option value="btc">BTC</option>
+                        </select>
+                    </div>
+                    <div class="define-alert">
+                        <div class="above">
+                            <span>Above:</span>
+                            <input id="above">
+                        </div>
+                        <div class="below">
+                            <span>Below:</span>
+                            <input id="below">
+                        </div>
+                        <div class="buttons">
+                            <button id="submit">Submit</button>
+                            <button id="delete">Close</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="right-column">
+                <div class="description disc">
+                    This extension is for information purposes only. I cannot guarantee the accuracy of the data provided by this extension. I will not be held responsible for any damage arising from the use of this extension.
+                </div>
+                <div class="description info">
+                    Please note that when you change currency, the total market cap and price data may not be visible until next update. If that is the case, just wait for about 5 minutes and everything should be fine. Also, keep in mind that the USD is the default FIAT currency. So if you want to see prices in USD, just don't select FIAT currency bellow.
+                </div>
+                <div class="donations">
+                    <div class="intro">
+                        We have put a lot of effort into building this extension. If you find it useful, please consider donating to the following addresses:
+                    </div>
+                    <div id="btc" class="wallet">
+                        <div class="address">BTC: 3KYJwpwtqVCs4M8XHyiexw1zmxKWBnemDb</div>
+                        <div class="qr-code"></div>
+                    </div>
+                    <div id="eth" class="wallet">
+                        <div class="address">ETH: 0x9EA1eeDacFE8f0DD993A6914BBA842Aeb59A1778</div>
+                        <div class="qr-code"></div>
+                    </div>
+                    <div id="bnb" class="wallet">
+                        <div class="address">BNB: 0x9EA1eeDacFE8f0DD993A6914BBA842Aeb59A1778</div>
+                        <div class="qr-code"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attribution">
+                Powered by <a href="https://www.coingecko.com" target="_blank" title="Visit CoinGecko.com">CoinGecko</a> API
+            </div>
+
+            <p id="loading">Loading coins... Please wait, this may take a while.</p>
+        
+        </div>
+
+        <script src="../js/options/options.js" type="module"></script>
+
+    </body>
+</html>
