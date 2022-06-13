@@ -4,8 +4,6 @@ let main = {};
 let coins = [];
 let selectedCoins = [];
 
-let current_symbol = "btc";
-
 let run = true;
 
 chrome.runtime.onInstalled.addListener(function (e) {
@@ -31,7 +29,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.action === "update") {
     core();
   } else if (msg.action === "set_current") {
-    current_symbol = msg.symbol;
+    main["current_symbol"] = msg.symbol;
     core();
   }
   return true;
@@ -171,7 +169,7 @@ async function getCoinsFiatPrice(coinsList) {
         /**
          * {"id":"project-galaxy","name":"Projec Galaxy","symbol":"gal","current_price_btc":0.00012242,"current_price_usd ":3.1,"price_change_percentage_24h":7.16177,"market_cap_rank":195}
          */
-        if (coin.symbol === current_symbol) {
+        if (coin.symbol === main["current_symbol"]) {
           setBadge(coin.price_change_percentage_24h);
         }
       }
@@ -179,20 +177,18 @@ async function getCoinsFiatPrice(coinsList) {
   }
 }
 
-function setBadge(price_change_percentage_24h) {
+function setBadge(price_change) {
   let changeValue = "";
-  if (typeof price_change_percentage_24h === "string")
-    changeValue = parseFloat(price_change_percentage_24h).toFixed(1) + "%";
-  if (typeof price_change_percentage_24h === "number")
-    changeValue = price_change_percentage_24h.toFixed(1) + "%";
+  if (typeof price_change === "string")
+    changeValue = parseFloat(price_change).toFixed(1) + "%";
+  if (typeof price_change === "number")
+    changeValue = price_change.toFixed(1) + "%";
   chrome.browserAction.setBadgeText({ text: changeValue });
   chrome.browserAction.setBadgeBackgroundColor({
-    color:
-      price_change_percentage_24h > 0
-        ? [51, 204, 0, 255]
-        : [255, 102, 102, 255],
+    color: price_change > 0 ? [51, 204, 0, 255] : [255, 102, 102, 255],
   });
 }
+
 async function getListOfCoins(arr) {
   try {
     // ponisti "coins" niz
