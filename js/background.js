@@ -186,13 +186,12 @@ function setBadge(price_change_percentage_24h) {
   if (typeof price_change_percentage_24h === "number")
     changeValue = price_change_percentage_24h.toFixed(1) + "%";
   chrome.browserAction.setBadgeText({ text: changeValue });
-  if (price_change_percentage_24h > 0) {
-    chrome.browserAction.setBadgeBackgroundColor({ color: [51, 204, 0, 255] });
-  } else {
-    chrome.browserAction.setBadgeBackgroundColor({
-      color: [255, 102, 102, 255],
-    });
-  }
+  chrome.browserAction.setBadgeBackgroundColor({
+    color:
+      price_change_percentage_24h > 0
+        ? [51, 204, 0, 255]
+        : [255, 102, 102, 255],
+  });
 }
 async function getListOfCoins(arr) {
   try {
