@@ -22,7 +22,12 @@ export const coins = {
       // napravi div sa klasom coin i dodaj ga na container
       let coinWrapper = document.createElement('div');
       coinWrapper.className = 'coin';
-
+      coinWrapper.addEventListener('click',() => {
+        //chrome.storage.local.set({current_symbol:coin.symbol.toLowerCase()})
+        chrome.runtime.sendMessage({ action: "set_current", symbol: coin.symbol.toLowerCase() }, (response) => {
+          // use the response here
+        });
+      })
       this.upOrDown(coin);
 
       coinWrapper.innerHTML = `
