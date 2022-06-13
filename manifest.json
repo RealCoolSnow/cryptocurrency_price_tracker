@@ -12,11 +12,10 @@
       "16": "./img/icon16.png",
       "48": "./img/icon48.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkcS7uL9EHLvC79LokPHx3XQUtyGGtmR7Xuap4R/e9YBXvcsAQa01kDkMk6j8h7ck96DBZFipZ+9HKYTHmFdNSC7k/l3RA2hh29Bdmvqs5JD++i0nqbft4qMN1jH/x4s3/r5kRqej0EoEm1oaNOfq98URhvPfjHi1tx2qNpKlOEWqEdMPRd2GwUtxpVAmyJdq1eNPr+eQWjkARPFVroriU5DSP0bDcANYSOuLoXKYdDu0ZSUE9YK/pGLuBw+B28MuYd4KfhDa0iA6RUExZ5BAfFT6ya0sJo7g9kMNB7J19cPTmb4LgOQ2TF8au52D7JfJMbpsDlPfzquDO1IqnTavCwIDAQAB",
    "manifest_version": 2,
    "name": "Cryptocurrency Price Tracker",
    "options_page": "./html/options.html",
    "permissions": [ "storage", "notifications", "contextMenus", "https://api.coingecko.com/api/v3/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "6.9"
+   "version": "7.0"
 }
