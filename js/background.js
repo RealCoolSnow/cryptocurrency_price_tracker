@@ -25,6 +25,13 @@ chrome.contextMenus.create({
   }
 });
 
+chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.action === 'update') {
+    core();
+  }
+  return true;
+});
+
 chrome.storage.local.get('main', data => {
   if (!data.main) return core();
 
